@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="1">1</button>
+	<button id="2">2</button>
+	<button id="3">3</button>
+
+	<script type="text/javascript">
+	//这种情况，i并没有共享，是局部变量。
+	//每一次点击显示的都是3，并不是期盼的123
+		window.onload = function(){
+			console.log("hi closure!")
+			var button = document.getElementsByTagName('button')
+			for (var i = 0; i < button.length; i++) {
+				button[i].addEventListener('click', function(){
+					console.log(this) // 当前点击的按钮
+					console.log(i) //3
+				},false)
+			}
+			console.log('outside'+i) //3
+		}
+	</script>
+</body>
+</html>
