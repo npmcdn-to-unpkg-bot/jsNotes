@@ -1,4 +1,4 @@
-<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
 
 <div id="app">
     {{ message }}
